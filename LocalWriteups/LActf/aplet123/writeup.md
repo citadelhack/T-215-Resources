@@ -174,7 +174,7 @@ We see that the address of rbp - 0x50 is loaded into the rax register. The value
    0x0000000000401269 <+8>:     mov    %fs:0x28,%rax
    0x0000000000401272 <+17>:    mov    %rax,-0x8(%rbp)
 ```
-From this, we see that the canary value is placed on the stack at rbp - 8 which gives an offset of 0x48, or 72 bytes from the beginning of the buffer. However, just to be safe, lets check the value on the stack to make sure there are no surprises. To do this we are going to set a break point at the call the `gets()` and run the program. To do this we will first run the command `break *0x00000000004012b3` and then `run`. When the break point is reached we are going to look at the stack memory starting at the buffer and going to the return address using the command `x/24x $rbp-0x50`.  When we do this we get the following output:
+From this, we see that the canary value is placed on the stack at rbp - 8 which gives an offset of 0x48, or 72 bytes from the beginning of the buffer. However, just to be safe, let's check the value on the stack to make sure there are no surprises. To do this we are going to set a break point at the call the `gets()` and run the program. To do this we will first run the command `break *0x00000000004012b3` and then `run`. When the break point is reached we are going to look at the stack memory starting at the buffer and going to the return address using the command `x/24x $rbp-0x50`.  When we do this we get the following output:
 ```
 (gdb) x/24x $rbp-0x50
 0x7fffffffdbd0: 0x00000000      0x00000000      0x00000000      0x00000000
@@ -184,9 +184,6 @@ From this, we see that the canary value is placed on the stack at rbp - 8 which 
 0x7fffffffdc10: 0x00000000      0x00000000      0x976db300      0x2e6aab87
 0x7fffffffdc20: 0x00000001      0x00000000      0xf7df26ca      0x00007fff
 ```
-From this output we see the stack canary is `0x976db300 0x2e6aab87`. But this is representing the value as two big endian dwords. Lets convert it into how it is represented in memory. one little endian qword, `0x003bd67978baa6e2`. We see we have an 8 byte stack canary. If you redo the last few steps to re-run the program multiple times, you will see the value is randomized each time, but there is one constant, the first byte is always `0x00`. This means that when we try and leak the value, if we give `printf()` a pointer at an offset of 0x48, we will get no leak, since it will stop reading at the null byte. To get the leak we just need to increase the offset by one to ensure that `printf()` leaks the whole canary. 
+From this output we see the stack canary is `0x976db300 0x2e6aab87`. But this is representing the value as two big endian dwords. Let's convert it into how it is represented in memory. one little endian qword, `0x003bd67978baa6e2`. We see we have an 8 byte stack canary. If you redo the last few steps to re-run the program multiple times, you will see the value is randomized each time, but there is one constant, the first byte is always `0x00`. This means that when we try and leak the value, if we give `printf()` a pointer at an offset of 0x48, we will get no leak, since it will stop reading at the null byte. To get the leak we just need to increase the offset by one to ensure that `printf()` leaks the whole canary. 
 
-With this information we now have everything we need to write and exploit to leak the canary, and then overwrite the return address and print the flag. The python script I wrote to do this can be found in this directory under the name `
-
-
-
+With this information we now have everything we need to write and exploit to leak the canary, and then overwrite the return address and print the flag. The python script I wrote to do this can be found in this directory under the name `apletsolve.py`.
