@@ -1,4 +1,4 @@
-# Given
+# Write up
 In this challenge, we are given a C source file and a compiled binary. When reading through the binary, we see that there is a function to print the flag:
 ```
 void print_flag(void) {
