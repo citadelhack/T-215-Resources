@@ -1,7 +1,13 @@
 # Given
-In this challenge, we are given a C source file and a compiled binary. When reading through the binary, we see that there is a call to the unsecure gets() libc function.  
-```
+In this challenge, we are given a C source file and a compiled binary. When reading through the binary, we see that there is a function to print the flag:
 
+and a call to the unsecure gets() libc function:  
+```
+char input[64];
+  puts("hello");
+  while (1) {
+    gets(input);
+```
 
 This looks to be an easy buffer overflow exploit.  However, before we get too excited, lets look at what security measures are in place.  To do this I use the checksec command, but this can be done using some other methods as well. When running checksec, I get the following output:
 ```
