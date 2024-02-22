@@ -36,3 +36,4 @@ char *s = strstr(input, "i'm");
     if (s) {
       printf("hi %s, i'm aplet123\n", s + 4);
 ```
+The buffer we need to control is `s + 4`. This buffer is created by the `strstr(char* buffer, char* key)` function. This function looks through the buffer for the first instance of the key substring, and returns that address.  
