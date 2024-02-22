@@ -36,4 +36,7 @@ char *s = strstr(input, "i'm");
     if (s) {
       printf("hi %s, i'm aplet123\n", s + 4);
 ```
-The buffer we need to control is `s + 4`. This buffer is created by the `strstr(char* buffer, char* key)` function. This function looks through the buffer for the first instance of the key substring, and returns that address.  
+The buffer we need to control is `s + 4`. This buffer is created by the `strstr(char* buffer, char* key)` function. This function looks through the buffer for the first instance of the key substring, and returns that address. the substring length is 3, but 4 is added to the address, this is most likely to bypass the assumed space. However, if we write "i'm" to the end of the buffer, we can use this to bypass the null terminator, causing an unintended read from stack space, and since `gets()` is used, we can overflow the buffer to write "i'm" to any point below the buffer in the stack to read any part of it. All we need to do is find the location of the stack canary.
+
+To do this, I use gdb, a dynamic binary analysis tool. first I run `gdb aplet123` to start gdb with the binary loaded, I then use the command `info func` to look at the function symbols gdb was able to resolve. Since this binary was not stripped, we find all the user-defined functions in the output:
+
