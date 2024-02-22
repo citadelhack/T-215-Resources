@@ -8,7 +8,7 @@ void print_flag(void) {
   puts(flag);
 }
 ```
-and a call to the unsecure gets() libc function:  
+and a call to the unsecure `gets()` libc function:  
 ```
 char input[64];
   puts("hello");
