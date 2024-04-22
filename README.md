@@ -10,7 +10,7 @@ Happy Hacking!
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
 
 ### Stuff to research and add:
-[https://one2bla.me/the-dark-arts/](https://one2bla.me/)
+[CoolStuff](https://one2bla.me/)
 
 https://ypl.coffee/house-of-orange/
 
