@@ -10,6 +10,10 @@ Happy Hacking!
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
 
 ### Stuff to research and add:
+https://one2bla.me/the-dark-arts/
+
+https://ypl.coffee/house-of-orange/
+
 global /etc/ld.so.preload that will overwrite functions in the global namespace(SUID binaries included), so you can't pin it to a specific process like you can with LD_PRELOAD
 
 ret2libc to call system to call mprotect to make stack executable
