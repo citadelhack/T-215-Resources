@@ -12,6 +12,8 @@ Besides updating and improving organization, I may begin adding write-ups from m
 ### Stuff to reseach and add:
 File Stream Oriented Programing (RSOP - Binex)
 
+stack pivoting (Binex)
+
 https://ctf.link/
 
 RPISec - Modern Binary Exploitation
