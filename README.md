@@ -10,6 +10,8 @@ Happy Hacking!
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
 
 ### Stuff to research and add:
+https://niftic.ca/posts/fsop/
+
 https://stacklikemind.io/ret2libc-aslr
 
 https://www.ired.team/
