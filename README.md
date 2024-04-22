@@ -10,6 +10,8 @@ Happy Hacking!
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
 
 ### Stuff to reseach and add:
+File Stream Oriented Programing (RSOP - Binex)
+
 https://ctf.link/
 
 RPISec - Modern Binary Exploitation
