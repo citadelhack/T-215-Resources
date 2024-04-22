@@ -9,7 +9,13 @@ Happy Hacking!
 # Future Plans
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
 
-### Stuff to reseach and add:
+### Stuff to research and add:
+https://stacklikemind.io/ret2libc-aslr
+
+https://www.ired.team/
+
+https://medium.com/@baycorp22/overcoming-aslr-a-guide-to-conquering-ret2libc-challenges-with-pie-f50be91e06ea (article on bypassing aslr and pie on relro nx binary)
+
 File Stream Oriented Programing (RSOP - Binex)
 
 stack pivoting (Binex)
