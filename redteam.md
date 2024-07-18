@@ -18,6 +18,12 @@ A website archiving past hxp jeopardy style CTFs. They can be run as a VM for pr
 ### [VulnHub](https://www.vulnhub.com/)
 VulnHub hosts VMs of vulnerable machines that can be downloaded and used for practice.
 
+### [Hack The Box](https://www.hackthebox.com/)
+Hack The Box is a popular offensive security training and practice platform, hosting many boxes, as well as CTFs.
+
+### [TryHackMe](https://www.hackthebox.com/)
+A popular educational platform containing bite-sized lessons on offensive and defensive security.
+
 ## Tools
 ### [ZoomEye](https://www.zoomeye.hk/) 
 ZoomEye is a web-based service for cataloging information on internet-connected devices, including open ports and known vulnerabilities.
