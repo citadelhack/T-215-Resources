@@ -18,15 +18,6 @@ ret2libc to call system to call mprotect to make stack executable
 Open Security Training Class Material
 http://opensecuritytraining.info/Training.html
 
-NSA Code Breaker Challenges
-https://codebreaker.ltsnet.net/home
-
-Hacker Curriculum - Sergey Bratus
-http://www.ists.dartmouth.edu/docs/Principles%20of%20the%20Hacker%20Curriculum.pdf
-
-Sergey Bratus - Dartmouth - Classes
-https://www.cs.dartmouth.edu/~sergey/
-
 https://pwnable.tw/
 
 Microcorruption
