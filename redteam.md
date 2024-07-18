@@ -24,6 +24,18 @@ Hack The Box is a popular offensive security training and practice platform, hos
 ### [TryHackMe](https://www.hackthebox.com/)
 A popular educational platform containing bite-sized lessons on offensive and defensive security.
 
+### [CTFlearn](https://ctflearn.com/)
+This website hosts many CTF like challenges and serves as a beginner-friendly intro to red team activities and CTFs.
+
+### [Root Me](https://www.root-me.org/?lang=en)
+Root Me is an offensive security training platform similar to Hack the Box.
+
+### [Google Gruyere](https://google-gruyere.appspot.com/)
+Google Gruyere is a web application exploit lab that can be set up on your local machine.
+
+### [HackerOne](https://www.hackerone.com/)
+HackerOne is the website many companies use for hosting their bug bounty programs. Once you are confident in your skills (Mostly web app but other programs exist as well), try to find a small bug bounty program to try and submit some bugs. 
+
 ## Tools
 ### [ZoomEye](https://www.zoomeye.hk/) 
 ZoomEye is a web-based service for cataloging information on internet-connected devices, including open ports and known vulnerabilities.
