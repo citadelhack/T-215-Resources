@@ -5,8 +5,11 @@ To catalog resources for learning about red team operations and tools, as well a
 ### [GTFObins](https://gtfobins.github.io/)
 GTFO bins is a resource that contains exploits for privilege escalation attacks stemming from commonly used binaries. 
 
-### [Red Team Notes](https://dmcxblue.gitbook.io/red-team-notes/persistence)
-This gitbook contains a lot of great information about red teaming, including different strategies for setting up persistence on windows machines.
+### [Red Team Notes](https://dmcxblue.gitbook.io/red-team-notes)
+A gitbook containing information on different techniques used in red team operations on Windows machines.
+
+### [ired.team](https://www.ired.team/)
+A website containing notes on red teaming and pen-testing Windows machines.
 
 ## Tools
 ### [ZoomEye](https://www.zoomeye.hk/) 
