@@ -7,3 +7,7 @@ GTFO bins is a resource that contains exploits for privilege escalation attacks 
 
 ### [Red Team Notes](https://dmcxblue.gitbook.io/red-team-notes/persistence)
 This gitbook contains a lot of great information about red teaming, including different strategies for setting up persistence on windows machines.
+
+## Tools
+### [ZoomEye](https://www.zoomeye.hk/) 
+ZoomEye is a web-based service for cataloging information on internet-connected devices, including open ports and known vulnerabilities.
