@@ -15,12 +15,6 @@ global /etc/ld.so.preload that will overwrite functions in the global namespace(
 
 ret2libc to call system to call mprotect to make stack executable
 
-Over The Wire - Wargames
-https://overthewire.org/wargames/
-
-Hack The Box - Solutions
-https://0xrick.github.io/hack-the-box/conceal/
-
 Free Tools to Play with
 
 OSINT Framework
