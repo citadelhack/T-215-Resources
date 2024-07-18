@@ -33,6 +33,11 @@ Root Me is an offensive security training platform similar to Hack the Box.
 ### [Google Gruyere](https://google-gruyere.appspot.com/)
 Google Gruyere is a web application exploit lab that can be set up on your local machine.
 
+### [OvertheWire](https://overthewire.org/wargames/)
+A wargames site hosting red team challenges over ssh.
+
+
+
 ### [HackerOne](https://www.hackerone.com/)
 HackerOne is the website many companies use for hosting their bug bounty programs. Once you are confident in your skills (Mostly web app but other programs exist as well), try to find a small bug bounty program to try and submit some bugs. 
 
