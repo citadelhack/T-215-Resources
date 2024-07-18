@@ -15,16 +15,23 @@ This mdBook contains the notes of a former army cyber operator containing binex 
 ## Challenges
 ### [Pwnable.kr](https://pwnable.kr)
 Pwnable.kr is a website hosting binex challenges sorted by difficulty. Not a great place to start but a great place to practice and find weak points and attacks you don't know. Write-ups for each challenge can be found online, don't be afraid to learn from a write-up if you get stuck.
+
 ### [PicoGym-Binary Exploitation](https://play.picoctf.org/login?redirect=/practice)
 PicoCTF's PicoGym contains past challenges from PicoCTF broken down by category. The reverse engineering section contains many good binary exploitation challenges with various difficulties.
+
 ### [Pwn.college](https://pwn.college)
 Pwn.college is a collection of courses and challenges that take you from getting started in cyber security to binary exploitation and software security. 
+
 ## Write-up Repos
 ### [Nightmare](https://github.com/guyinatuxedo/nightmare)
 The Nighmare repository is a repository of challenges and write-ups involving reverse engineering and binex. A good place to start practicing. 
+
 ### [Linux Exploitation Course Repo](https://github.com/nnamon/linux-exploitation-course)
-This Github repository is a sep by step course that walks you through the basics of linux exploitation.
+This Github repository is a step by step course that walks you through the basics of Linux exploitation.
+
+### [RPISEC-MBE](https://github.com/RPISEC/MBE)
+This is a github repo containing the course material of RPI's Modern Binary Exploitation Course from when it was student-led.
 
 ## Youtube Channels
 ### [LiveOverflow](https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN)
-LiveOverflow is a great youtuber for learning about hacking and exploitation, but he also has an outstanding playlist walking you through binary exploitation and memory corruption attacks.
+LiveOverflow is a great Youtuber for learning about hacking and exploitation, but he also has an outstanding playlist walking you through binary exploitation and memory corruption attacks.
