@@ -10,25 +10,10 @@ Happy Hacking!
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
 
 ### Stuff to research and add:
-[CoolStuff](https://one2bla.me/)
-
-https://ypl.coffee/house-of-orange/
 
 global /etc/ld.so.preload that will overwrite functions in the global namespace(SUID binaries included), so you can't pin it to a specific process like you can with LD_PRELOAD
 
 ret2libc to call system to call mprotect to make stack executable
-
-https://niftic.ca/posts/fsop/
-
-https://stacklikemind.io/ret2libc-aslr
-
-https://www.ired.team/
-
-https://medium.com/@baycorp22/overcoming-aslr-a-guide-to-conquering-ret2libc-challenges-with-pie-f50be91e06ea (article on bypassing aslr and pie on relro nx binary)
-
-File Stream Oriented Programing (RSOP - Binex)
-
-stack pivoting (Binex)
 
 https://ctf.link/
 
