@@ -12,6 +12,9 @@ This book teaches you how to set up a safe environment to analyze malware sample
 ### [PicoGym-Reverse Engineering](https://play.picoctf.org/login?redirect=/practice)
 PicoCTF's PicoGym contains past challenges from PicoCTF broken down by category. The reverse engineering section contains many good reverse engineering challenges of various difficulties.
 
+### [The Flare-On Challenge](https://www.flare-on.com/)
+An annual reverse engineering CTF. Past CTFs are also archived for practice.
+
 ## Write-ups and Repos
 ### [RPISEC-MBE](https://github.com/RPISEC/Malware)
 This is a github repo containing the course material of RPI's Malware Analysis Course from when it was student-led.
