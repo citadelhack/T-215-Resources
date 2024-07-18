@@ -15,27 +15,6 @@ global /etc/ld.so.preload that will overwrite functions in the global namespace(
 
 ret2libc to call system to call mprotect to make stack executable
 
-Open Security Training Class Material
-http://opensecuritytraining.info/Training.html
-
-https://pwnable.tw/
-
-Microcorruption
-https://microcorruption.com/login
-
-Flare-on challenges
-http://www.flare-on.com/
-
-http://eudyptula-challenge.org/
-
-https://www.hackthissite.org/
-
-Hack The Box
-https://www.hackthebox.eu/
-
-PenTester Framework
-https://github.com/trustedsec/ptf/blob/master/README.md
-
 CrackMe
 https://crackmes.one/
 
