@@ -21,9 +21,6 @@ http://opensecuritytraining.info/Training.html
 NSA Code Breaker Challenges
 https://codebreaker.ltsnet.net/home
 
-CSE Assemblyline Source Code
-https://bitbucket.org/cse-assemblyline/
-
 Hacker Curriculum - Sergey Bratus
 http://www.ists.dartmouth.edu/docs/Principles%20of%20the%20Hacker%20Curriculum.pdf
 
