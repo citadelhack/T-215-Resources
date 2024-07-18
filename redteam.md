@@ -14,3 +14,6 @@ A website containing notes on red teaming and pen-testing Windows machines.
 ## Tools
 ### [ZoomEye](https://www.zoomeye.hk/) 
 ZoomEye is a web-based service for cataloging information on internet-connected devices, including open ports and known vulnerabilities.
+
+### [Shodan](https://www.shodan.io/)
+Shodan is a popular search engine for internet-connected devices, similar to ZoomEye.
