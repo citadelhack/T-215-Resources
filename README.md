@@ -8,10 +8,3 @@ Happy Hacking!
 
 # Future Plans
 Besides updating and improving organization, I may begin adding write-ups from myself and other members of the Citadel Cyberteam so that everyone can learn from our failures and successes.
-
-### Stuff to research and add:
-
-global /etc/ld.so.preload that will overwrite functions in the global namespace(SUID binaries included), so you can't pin it to a specific process like you can with LD_PRELOAD
-
-C for Hackers
-https://vimeo.com/384348826
