@@ -1,5 +1,5 @@
 # Purpose 
-To catalog resources for learning about red team operations and tools.
+To catalog resources for learning about red team operations and tools, as well as general CTF resources.
 
 ## Websites
 ### [GTFObins](https://gtfobins.github.io/)
