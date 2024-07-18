@@ -1,10 +1,7 @@
 # Purpose 
 To catalog resources for learning about red team operations and tools, as well as general CTF resources.
 
-## Websites
-### [GTFObins](https://gtfobins.github.io/)
-GTFO bins is a resource that contains exploits for privilege escalation attacks stemming from commonly used binaries. 
-
+## Websites 
 ### [Red Team Notes](https://dmcxblue.gitbook.io/red-team-notes)
 A gitbook containing information on different techniques used in red team operations on Windows machines.
 
@@ -39,8 +36,6 @@ Google Gruyere is a web application exploit lab that can be set up on your local
 ### [OvertheWire](https://overthewire.org/wargames/)
 A wargames site hosting red team challenges over ssh.
 
-
-
 ### [HackerOne](https://www.hackerone.com/)
 HackerOne is the website many companies use for hosting their bug bounty programs. Once you are confident in your skills (Mostly web app but other programs exist as well), try to find a small bug bounty program to try and submit some bugs. 
 
@@ -53,3 +48,6 @@ Shodan is a popular search engine for internet-connected devices, similar to Zoo
 
 ### [publicWWW](https://publicwww.com/)
 A search engine for website source code.
+
+### [GTFObins](https://gtfobins.github.io/)
+GTFO bins is a resource that contains exploits for privilege escalation attacks stemming from commonly used binaries.
