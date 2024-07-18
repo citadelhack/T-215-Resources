@@ -11,6 +11,10 @@ A gitbook containing information on different techniques used in red team operat
 ### [ired.team](https://www.ired.team/)
 A website containing notes on red teaming and pen-testing Windows machines.
 
+## Challenges
+### [hxp CTFs](https://ctf.link/)
+A website archiving past hxp jeopardy style CTFs. They can be run as a VM for practice. 
+
 ## Tools
 ### [ZoomEye](https://www.zoomeye.hk/) 
 ZoomEye is a web-based service for cataloging information on internet-connected devices, including open ports and known vulnerabilities.
