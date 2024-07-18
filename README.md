@@ -23,9 +23,6 @@ https://www.vulnhub.com/series/exploit-exercises,11/
 Smash The Stack
 http://smashthestack.org/
 
-ROP Emporium
-https://ropemporium.com/
-
 UT Dallas - System Security and Binary Code Analysis
 https://www.utdallas.edu/~zxl111930/spring2012.html
 
@@ -71,9 +68,6 @@ https://www.root-me.org/?lang=en
 Hacking Lab
 https://www.hacking-lab.com/index.html
 
-Payloads in C
-https://radareorg.github.io/blog/posts/payloads-in-c/
-
 Exploit Writing Tutorial
 https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/
 
@@ -91,6 +85,7 @@ https://overthewire.org/wargames/
 
 Hack The Box - Solutions
 https://0xrick.github.io/hack-the-box/conceal/
+
 Free Tools to Play with
 
 OSINT Framework
@@ -99,17 +94,8 @@ https://osintframework.com/
 Source Code Search Engine
 https://publicwww.com/
 
-ZoomEye
-https://www.zoomeye.org/
-
-GreyNoise Visualizer
-https://viz.greynoise.io/table
-
 Censys
 https://censys.io/
-
-Shodan
-https://www.shodan.io/
 
 Hunter.io
 https://hunter.io/
