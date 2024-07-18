@@ -1,5 +1,5 @@
 # Purpose
-To catolog resources for learning about and practicing blueteam operations.
+To catalog resources for learning about and practicing blue team operations.
 
 ## Websites
 ### [Open Security Training](https://opensecuritytraining.info/Welcome.html)
