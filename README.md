@@ -17,12 +17,6 @@ ret2libc to call system to call mprotect to make stack executable
 
 https://ctf.link/
 
-RPISec - Modern Binary Exploitation
-https://github.com/RPISEC/MBE
-
-RPISec - Malware Analysis
-https://github.com/RPISEC/Malware
-
 Vulnhub - Exploit Exercises
 https://www.vulnhub.com/series/exploit-exercises,11/
 
