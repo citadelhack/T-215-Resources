@@ -8,6 +8,9 @@ GTFO bins is a resource that contains exploits for privilege escalation attacks 
 ### [Red Team Notes](https://dmcxblue.gitbook.io/red-team-notes)
 A gitbook containing information on different techniques used in red team operations on Windows machines.
 
+### [OSINT Framwork](https://osintframework.com/)
+A website cataloging different OSINT tools.
+
 ### [ired.team](https://www.ired.team/)
 A website containing notes on red teaming and pen-testing Windows machines.
 
@@ -47,3 +50,6 @@ ZoomEye is a web-based service for cataloging information on internet-connected 
 
 ### [Shodan](https://www.shodan.io/)
 Shodan is a popular search engine for internet-connected devices, similar to ZoomEye.
+
+### [publicWWW](https://publicwww.com/)
+A search engine for website source code.
