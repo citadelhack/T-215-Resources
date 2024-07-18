@@ -28,6 +28,12 @@ A website hosting multiple Return Oriented Programming challenges.
 ### [SmashTheStack](https://www.smashthestack.org/)
 A wargame website hosting binary exploitation-based wargames.
 
+### [Microcorruption](https://microcorruption.com/)
+A wargame website hosting embedded security challenges.
+
+### [pwnable.tw](https://pwnable.tw/)
+A wargame site hosting binary exploitation challenges over netcat.
+
 ## Write-ups and Repos
 ### [Nightmare](https://github.com/guyinatuxedo/nightmare)
 The Nighmare repository is a repository of challenges and write-ups involving reverse engineering and binex. A good place to start practicing. 
