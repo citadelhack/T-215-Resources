@@ -1,6 +1,6 @@
 # Write-up
 In this challenge I was given a single unstripped binary. The results of `file` and `pwn checksec` are below:
-```python
+```C
 chall: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=f041a6eba0e7557961bb783a363f0cb0bbb3eb8b, for GNU/Linux 3.2.0, not stripped
 ```
 ```javascript
