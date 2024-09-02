@@ -26,15 +26,15 @@ For static analysis, my go-to tool is ghidra. So I load it into ghidra and look 
 
 ![Fig 1.](./funcs.png "Ghidra function symbol tree")
 
-From this I can see that there are 4 user defined functions, `main()`, `init()`, `vuln()`, and `win()`. These functions are decompiled as follows:
+From this I can see that there are 4 user defined functions, `main()`, `init()`, `vuln()`, and `win()`. These functions are decompiled as follows (some changes have been made for correctness and readability):
 
 **main():**
 
 ```C
-undefined8 main(EVP_PKEY_CTX *param_1)
+int main()
 
 {
-  init(param_1);
+  init();
   vuln();
   return 0;
 }
@@ -43,7 +43,7 @@ undefined8 main(EVP_PKEY_CTX *param_1)
 **init():**
 
 ```C
-int init(EVP_PKEY_CTX *ctx)
+void init(EVP_PKEY_CTX *ctx)
 
 {
   int iVar1;
@@ -52,14 +52,14 @@ int init(EVP_PKEY_CTX *ctx)
   setvbuf(stdout,(char *)0x0,2,0);
   setvbuf(stdin,(char *)0x0,2,0);
   iVar1 = setvbuf(stderr,(char *)0x0,2,0);
-  return iVar1;
+  return;
 }
 ```
 
 **vuln():**
 
 ```C
-undefined8 vuln(void)
+void vuln(void)
 
 {
   long in_FS_OFFSET;
@@ -74,18 +74,18 @@ undefined8 vuln(void)
   local_10 = *(long *)(in_FS_OFFSET + 0x28);
   local_40 = 0;
   puts("which stack position do you want to use?");
-  __isoc99_scanf(&DAT_004020c9,&local_44);
+  __isoc99_scanf("%d",&local_44);
   local_44 = local_44 << 3;
   local_40 = *(undefined8 *)((long)&uStack_58 + (ulong)local_44);
   puts("you have one chance to modify a byte by xor.");
   puts("Byte Index?");
-  __isoc99_scanf(&DAT_004020c9,&local_48);
+  __isoc99_scanf("%d",&local_48);
   if (((int)local_48 < 0) || (7 < (int)local_48)) {
     puts("don\'t cheat!");
     exit(0);
   }
   puts("xor with?");
-  __isoc99_scanf(&DAT_004020c9,local_4c);
+  __isoc99_scanf("%d",local_4c);
   local_38[(ulong)local_48 - 8] = local_38[(ulong)local_48 - 8] ^ local_4c[0];
   puts("finally, do you have any feedback? it will surely help us improve our service.");
   __isoc99_scanf("%20[^@]",local_38);
@@ -95,14 +95,14 @@ undefined8 vuln(void)
                     /* WARNING: Subroutine does not return */
     __stack_chk_fail();
   }
-  return 0;
+  return;
 }
 ```
 
 **win():**
 
 ```C
-undefined8 win(void)
+void win(void)
 
 {
   FILE *__stream;
@@ -125,7 +125,7 @@ undefined8 win(void)
                     /* WARNING: Subroutine does not return */
     __stack_chk_fail();
   }
-  return 0;
+  return;
 }
 ```
 
