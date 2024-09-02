@@ -8,7 +8,7 @@ chall: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, 
 ```
 
 Pwn Checksec:
-```json
+```javascript
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
     Stack:    Canary found
