@@ -26,7 +26,7 @@ For static analysis, my go-to tool is ghidra. So I load it into ghidra and look 
 
 ![Fig 1.](./functions.png "Ghidra function symbol tree")
 
-From this I can see that there are 4 user defined functions, `main()`, `init()`, `vuln()`, and `win()`. These functions are decompiled as follows (some changes have been made for correctness and readability):
+From this I can see that there are 5 user defined functions, `main()`, `init()`, `vuln()`, `bye()`, and `win()`. These functions are decompiled as follows (some changes have been made for correctness and readability):
 
 **main():**
 
