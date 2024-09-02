@@ -129,6 +129,8 @@ void win(void)
 }
 ```
 
+From this decomilation we can see that `main()` calls `init()` which sets up the buffer modes for `stdin`, `stdout`, and `stderr`, this is not very important for our purposes. Then main calls `vuln()`, which allows us to do some funny buisness with the stack and then gives us a format string vulnerability at the line `printf(local_38);`. After this the `bye()` funciton is called which prints a message and exits the program.
+
 ```python
 [+] Opening connection to byte-modification-service.challs.csc.tf on port 1337: Done
 b'== proof-of-work: disabled ==\nwhich stack position do you want to use?\n'
