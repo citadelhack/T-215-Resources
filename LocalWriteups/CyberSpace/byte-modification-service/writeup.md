@@ -18,7 +18,8 @@ From this I saw that I was working with an unstripped x86-64 bit binary with NX 
 Next to reverse the binary and see what primitives we are dealing with.
 
 ### Static Analysis
-For static analysis, my go-to tool is ghidra. So I load it into ghidra and look at the functions it finds.
+For static analysis, my go-to tool is ghidra. So I load it into ghidra and look at the functions it finds. 
+![Fig 1.](./funcs.png "Ghidra function symbol tree")
 ```python
 [+] Opening connection to byte-modification-service.challs.csc.tf on port 1337: Done
 b'== proof-of-work: disabled ==\nwhich stack position do you want to use?\n'
