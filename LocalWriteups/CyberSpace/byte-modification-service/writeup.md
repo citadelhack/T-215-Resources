@@ -31,7 +31,7 @@ From this I can see that there are 4 user defined functions, `main()`, `init()`,
 **main():**
 
 ```C
-int main()
+int main(void)
 
 {
   init();
@@ -43,7 +43,7 @@ int main()
 **init():**
 
 ```C
-void init(EVP_PKEY_CTX *ctx)
+void init(void)
 
 {
   int iVar1;
@@ -92,6 +92,41 @@ void vuln(void)
   printf(local_38);
   bye();
   if (local_10 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return;
+}
+```
+**bye():**
+
+```C
+void bye(void)
+
+{
+  FILE *__stream;
+  long in_FS_OFFSET;
+  char acStack_50 [56];
+  long lStack_18;
+  code *pcStack_10;
+  
+  pcStack_10 = (code *)0x4012b0;
+  puts("Thanks for modifying the byte, goodbye.");
+  pcStack_10 = win;
+  exit(0);
+  lStack_18 = *(long *)(in_FS_OFFSET + 0x28);
+  pcStack_10 = (code *)&stack0xfffffffffffffff8;
+  __stream = fopen("flag.txt","r");
+  if (__stream == (FILE *)0x0) {
+    puts("flag.txt not found!");
+    exit(0);
+  }
+  fgets(acStack_50,0x32,__stream);
+  puts(acStack_50);
+  puts("How could you do that?!");
+  puts("That\'s my precious secret.");
+  puts("Anyway congratulations");
+  if (lStack_18 != *(long *)(in_FS_OFFSET + 0x28)) {
                     /* WARNING: Subroutine does not return */
     __stack_chk_fail();
   }
