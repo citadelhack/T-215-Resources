@@ -16,7 +16,7 @@ Pwn Checksec:
     PIE:      No PIE (0x400000)
 ```
 
-From this I saw that I was working with an unstripped x86-64 bit binary with NX and a Stack Canary but no PIE, this should make reversing and exploit crafting relatively simple.
+From this I saw that I was working with an unstripped x86-64 bit binary with NX and a Stack Canary but it is not PIE (Position Independent Executable), this should make reversing and exploit crafting relatively simple.
 
 ## Reversing
 Next to reverse the binary and see what primitives we are dealing with.
@@ -142,6 +142,9 @@ void win(void)
 From this decomilation we can see that `main()` calls `init()` which sets up the buffer modes for `stdin`, `stdout`, and `stderr`, this is not very important for our purposes. Then main calls `vuln()`, which allows us to grab 8 bytes from the stack, modify a byte, and leave a message. After this the `bye()` funciton is called which prints a message and exits the program.
 
 ## The Vulnerability
+The main vulnerability in this program exists within the aptly named `vuln()` function. The call `printf(local_38);` passes a user controlled buffer directly to printf
+
+
 
 ```python
 [+] Opening connection to byte-modification-service.challs.csc.tf on port 1337: Done
