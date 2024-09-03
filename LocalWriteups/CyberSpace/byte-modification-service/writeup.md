@@ -148,7 +148,7 @@ The main vulnerability in this program exists within the aptly named `vuln()` fu
 ## Dynamic Analysis
 Now that the vulnerability is known. The next step is to view the memory space of the process (specifically the stack) and how it changes as the program executes so I can find out how to leverage it in my exploit. To do this I generally us GEF which is a useful wrapper for GDB.
 
-```java
+```C
 gef➤  tel $rsp
 0x00007fffffff0240│+0x0000: 0x0000000000000000   ← $rsp
 0x00007fffffff0248│+0x0008: 0x00007ffff7e4d51d  →  <__GI__IO_file_setbuf+000d> test rax, rax
