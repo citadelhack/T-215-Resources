@@ -185,7 +185,67 @@ gef➤
 0x00007fffffff0320│+0x00e0: 0x0000000000000000
 0x00007fffffff0328│+0x00e8: 0x00007fffffff03b8  →  0x00007fffffff0a6a  →  "/home/fidesvita/CTF/cyberspace/2024/byte-mod-servi[...]"
 ```
+The first thing I attempted was to grab the saved rbp address at `0x00007fffffff0268` modify the last byte to point to the return addresss of `main()`, and then use the format string to modify the return address with the format string to the address of win(). However, this solution was both inefficient and impossible, due to the fact that this function never naturally returns to or from main and only terminates with a call to exit.
 
+The next idea I had was to overwrite an address in the Global Offset Table (GOT). To do this. I need to know the layout of the GOT. so I used ghidra to look at it.
+
+```x86
+                             //
+                             // .got.plt 
+                             // SHT_PROGBITS  [0x404000 - 0x404057]
+                             // ram:00404000-ram:00404057
+                             //
+                             __DT_PLTGOT                                     XREF[2]:     00403ef8(*), 
+                             _GLOBAL_OFFSET_TABLE_                                        _elfSectionHeaders::00000610(*)  
+        00404000 20 3e 40        addr       _DYNAMIC
+                 00 00 00 
+                 00 00
+                             PTR_00404008                                    XREF[1]:     FUN_00401020:00401020(R)  
+        00404008 00 00 00        addr       00000000
+                 00 00 00 
+                 00 00
+                             PTR_00404010                                    XREF[1]:     FUN_00401020:00401026  
+        00404010 00 00 00        addr       00000000
+                 00 00 00 
+                 00 00
+                             PTR_puts_00404018                               XREF[1]:     puts:004010b4  
+        00404018 08 50 40        addr       <EXTERNAL>::puts                                 = ??
+                 00 00 00 
+                 00 00
+                             PTR___stack_chk_fail_00404020                   XREF[1]:     __stack_chk_fail:004010c4  
+        00404020 10 50 40        addr       <EXTERNAL>::__stack_chk_fail                     = ??
+                 00 00 00 
+                 00 00
+                             PTR_printf_00404028                             XREF[1]:     printf:004010d4  
+        00404028 18 50 40        addr       <EXTERNAL>::printf                               = ??
+                 00 00 00 
+                 00 00
+                             PTR_fgets_00404030                              XREF[1]:     fgets:004010e4  
+        00404030 20 50 40        addr       <EXTERNAL>::fgets                                = ??
+                 00 00 00 
+                 00 00
+                             PTR_setvbuf_00404038                            XREF[1]:     setvbuf:004010f4  
+        00404038 30 50 40        addr       <EXTERNAL>::setvbuf                              = ??
+                 00 00 00 
+                 00 00
+                             PTR_fopen_00404040                              XREF[1]:     fopen:00401104  
+        00404040 38 50 40        addr       <EXTERNAL>::fopen                                = ??
+                 00 00 00 
+                 00 00
+                             PTR___isoc99_scanf_00404048                     XREF[1]:     __isoc99_scanf:00401114  
+        00404048 40 50 40        addr       <EXTERNAL>::__isoc99_scanf                       = ??
+                 00 00 00 
+                 00 00
+                             DAT_00404050                                    XREF[1]:     exit:00401124  
+        00404050 48              ??         48h    H                                         ?  ->  00405048
+        00404051 50              ??         50h    P
+        00404052 40              ??         40h    @
+        00404053 00              ??         00h
+        00404054 00              ??         00h
+        00404055 00              ??         00h
+        00404056 00              ??         00h
+        00404057 00              ??         00h
+```
 
 ```python
 [+] Opening connection to byte-modification-service.challs.csc.tf on port 1337: Done
