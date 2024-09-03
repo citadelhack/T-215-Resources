@@ -148,6 +148,8 @@ The main vulnerability in this program exists within the aptly named `vuln()` fu
 ## Dynamic Analysis
 Now that the vulnerability is known. The next step is to view the memory space of the process (specifically the stack) and how it changes as the program executes so I can find out how to leverage it in my exploit. To do this I generally us GEF which is a useful wrapper for GDB.
 
+To start I am mostly interested on what is on the stack, so I break before the first `scanf()` call and use GEF's telescope command to view the data currently one the stack.
+
 ```C++
 gef➤  tel $rsp
 0x00007fffffff0240│+0x0000: 0x0000000000000000   ← $rsp
