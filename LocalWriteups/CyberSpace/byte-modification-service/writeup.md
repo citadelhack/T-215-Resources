@@ -45,13 +45,11 @@ int main(void)
 ```C
 void init(void)
 
-{
-  int iVar1;
-  
+{ 
   syscall();
   setvbuf(stdout,(char *)0x0,2,0);
   setvbuf(stdin,(char *)0x0,2,0);
-  iVar1 = setvbuf(stderr,(char *)0x0,2,0);
+  setvbuf(stderr,(char *)0x0,2,0);
   return;
 }
 ```
