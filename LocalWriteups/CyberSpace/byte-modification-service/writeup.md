@@ -142,7 +142,10 @@ void win(void)
 From this decomilation we can see that `main()` calls `init()` which sets up the buffer modes for `stdin`, `stdout`, and `stderr`, this is not very important for our purposes. Then main calls `vuln()`, which allows us to grab 8 bytes from the stack, modify a byte, and leave a message. After this the `bye()` funciton is called which prints a message and exits the program.
 
 ## The Vulnerability
-The main vulnerability in this program exists within the aptly named `vuln()` function. The call `printf(local_38);` passes a user controlled buffer directly to printf
+
+In this section I will explain the basics of a format string vulnerability. If you already have a good grasp of this, move on to the next section.
+
+The main vulnerability in this program exists within the aptly named `vuln()` function. The call `printf(local_38);` passes a user controlled buffer (`local_38`) directly to `printf()`. This is known as a format string vulnerability.   
 
 
 
