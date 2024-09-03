@@ -148,6 +148,41 @@ The main vulnerability in this program exists within the aptly named `vuln()` fu
 ## Dynamic Analysis
 Now that the vulnerability is known. The next step is to view the memory space of the process (specifically the stack) and how it changes as the program executes so I can find out how to leverage it in my exploit. To do this I generally us GEF which is a useful wrapper for GDB.
 
+```python
+gef➤  tel $rsp
+0x00007fffffff0240│+0x0000: 0x0000000000000000   ← $rsp
+0x00007fffffff0248│+0x0008: 0x00007ffff7e4d51d  →  <__GI__IO_file_setbuf+000d> test rax, rax
+0x00007fffffff0250│+0x0010: 0x00007ffff7faf4e0  →  0x00000000fbad2087
+0x00007fffffff0258│+0x0018: 0x0000000000000000
+0x00007fffffff0260│+0x0020: 0x00007fffffff03b8  →  0x00007fffffff0a6a  →  "/home/fidesvita/CTF/cyberspace/2024/byte-mod-servi[...]"
+0x00007fffffff0268│+0x0028: 0x00007fffffff0290  →  0x00007fffffff02a0  →  0x0000000000000001
+0x00007fffffff0270│+0x0030: 0x0000000000000000
+0x00007fffffff0278│+0x0038: 0x00007fffffff03c8  →  0x00007fffffff0aa5  →  "SHELL=/run/current-system/sw/bin/bash"
+0x00007fffffff0280│+0x0040: 0x00007ffff7ffd000  →  0x00007ffff7ffe2e0  →  0x0000000000000000
+0x00007fffffff0288│+0x0048: 0x4cc1af39a008ca00
+gef➤  
+0x00007fffffff0290│+0x0050: 0x00007fffffff02a0  →  0x0000000000000001    ← $rbp
+0x00007fffffff0298│+0x0058: 0x00000000004014fa  →  <main+001c> mov eax, 0x0
+0x00007fffffff02a0│+0x0060: 0x0000000000000001
+0x00007fffffff02a8│+0x0068: 0x00007ffff7df014e  →  <__libc_start_call_main+007e> mov edi, eax
+0x00007fffffff02b0│+0x0070: 0x00007fffffff03a0  →  0x00007fffffff03a8  →  0x0000000000000000
+0x00007fffffff02b8│+0x0078: 0x00000000004014de  →  <main+0000> endbr64 
+0x00007fffffff02c0│+0x0080: 0x0000000100400040 ("@"?)
+0x00007fffffff02c8│+0x0088: 0x00007fffffff03b8  →  0x00007fffffff0a6a  →  "/home/fidesvita/CTF/cyberspace/2024/byte-mod-servi[...]"
+0x00007fffffff02d0│+0x0090: 0x00007fffffff03b8  →  0x00007fffffff0a6a  →  "/home/fidesvita/CTF/cyberspace/2024/byte-mod-servi[...]"
+0x00007fffffff02d8│+0x0098: 0xf5ac00555ef4dda9
+gef➤  
+0x00007fffffff02e0│+0x00a0: 0x0000000000000000
+0x00007fffffff02e8│+0x00a8: 0x00007fffffff03c8  →  0x00007fffffff0aa5  →  "SHELL=/run/current-system/sw/bin/bash"
+0x00007fffffff02f0│+0x00b0: 0x00007ffff7ffd000  →  0x00007ffff7ffe2e0  →  0x0000000000000000
+0x00007fffffff02f8│+0x00b8: 0x0000000000403e18  →  0x00000000004011e0  →  <__do_global_dtors_aux+0000> endbr64 
+0x00007fffffff0300│+0x00c0: 0x0a53ffab5b96dda9
+0x00007fffffff0308│+0x00c8: 0x0a53efeb5cf2dda9
+0x00007fffffff0310│+0x00d0: 0x0000000000000000
+0x00007fffffff0318│+0x00d8: 0x0000000000000000
+0x00007fffffff0320│+0x00e0: 0x0000000000000000
+0x00007fffffff0328│+0x00e8: 0x00007fffffff03b8  →  0x00007fffffff0a6a  →  "/home/fidesvita/CTF/cyberspace/2024/byte-mod-servi[...]"
+```
 
 
 ```python
