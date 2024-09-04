@@ -249,7 +249,26 @@ The next idea I had was to overwrite an address in the Global Offset Table (GOT)
         00404056 00              ??         00h
         00404057 00              ??         00h
 ```
-However, I can't just overwrite any GOT entry, it needs to be a function that is called in the current execution path. This means that my only feasable targets are `puts()`, `exit()`, and `__stack_check_fail()`. But with a little reasoning, it can be found that `__stack_check_fail()` is not a viable target since it is only called right before a `ret` instruction,which is never called, and we can't overwrite the canary and the GOT entry due to the size constraints of the format string. Furthermore, `puts()` cannot be targeted either since it is called in the win function I am trying to call. This leaves the `exit()` entry.
+However, I can't just overwrite any GOT entry, it needs to be a function that is called in the current execution path. This means that my only feasable targets are `puts()`, `exit()`, and `__stack_check_fail()`. But with a little reasoning, it can be found that `__stack_check_fail()` is not a viable target since it is only called right before a `ret` instruction,which is never called, and we can't overwrite the canary and the GOT entry due to the size constraints of the format string. Furthermore, `puts()` cannot be targeted either since it is called in the win function I am trying to call. This leaves the `exit()` entry. However, the closest addresses on the stack require changing 2 bytes of the address, which cannot be done with an xor, and it would take multiple writes to use the format string to change the address as well, which I don't have room for. I was stuck at this point for longer than I would like to admit. However, soon I found what I had been missing.
+
+## Eureka!
+Remember how I said that the `init()` function only set the modes for the standard buffers? If you were paying attention, you may have seen a function that I did not mention, `syscall()`. After hours of trying to find a way to overwrite the GOT entry for exit, I remembered this syscall and decided to looke into it. Ghidra does not automatically find the parameters passed to the syscall, so I had to look at the assembly to see what was going on.
+
+```
+        0040121e 48 c7 c0        MOV        RAX,0xa
+                 0a 00 00 00
+        00401225 48 c7 c7        MOV        RDI,_init
+                 00 10 40 00
+        0040122c 48 c7 c6        MOV        RSI,0x1000
+                 00 10 00 00
+        00401233 48 c7 c2        MOV        RDX,0x7
+                 07 00 00 00
+        0040123a 0f 05           SYSCALL
+```
+The syscall number stored in RAX was 0xA, or 10. After looking this up in a syscall table, I found that this stood for the sys_mprotect syscall. RDI contains the starting address of the memory region, RSI contains the size of the memory region, and RDX contains the protection flags. After some research I found that 0x7 is the PROT_READ | PROT_WRITE | PROT_EXEC flags. This means that the syscall makes the defined memory region readable, writeable, and executable. This memory region is large enough to contain all of the user defined functions.
+
+## Exploitation
+
 
 ```python
 [+] Opening connection to byte-modification-service.challs.csc.tf on port 1337: Done
