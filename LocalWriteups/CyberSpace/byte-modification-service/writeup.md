@@ -268,7 +268,7 @@ Remember how I said that the `init()` function only set the modes for the standa
 The syscall number stored in RAX was 0xA, or 10. After looking this up in a syscall table, I found that this stood for the sys_mprotect syscall. RDI contains the starting address of the memory region, RSI contains the size of the memory region, and RDX contains the protection flags. After some research I found that 0x7 is the PROT_READ | PROT_WRITE | PROT_EXEC flags. This means that the syscall makes the defined memory region readable, writeable, and executable. This memory region is large enough to contain all of the user defined functions.
 
 ## Exploitation
-
+After seeing this, my new idea was to change one of the call instructions (either to `bye()` or `exit()`) to call `win()`. After some calculations, I found that the call to `bye()` in `vuln()` was the most viable target. Then by using the format string vulnerability to change one byte in the offset operand of call, I caused the program to call `win()` and print the flag instead of calling the `bye()` as can be seen below. The exploit code can be found in solve.py, and the challenge binary and a fake flag file are stored in this directory as well if you would like to try it for yourself.
 
 ```python
 [+] Opening connection to byte-modification-service.challs.csc.tf on port 1337: Done
