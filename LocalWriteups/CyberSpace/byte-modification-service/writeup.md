@@ -188,7 +188,7 @@ gef➤
 0x00007fffffff0320│+0x00e0: 0x0000000000000000
 0x00007fffffff0328│+0x00e8: 0x00007fffffff03b8  →  0x00007fffffff0a6a  →  "/home/fidesvita/CTF/cyberspace/2024/byte-mod-servi[...]"
 ```
-The first thing I attempted was to grab the saved rbp address at `0x00007fffffff0268` modify the last byte to point to the return addresss of `main()`, and then use the format string to modify the return address with the format string to the address of win(). However, this solution was both inefficient and impossible, due to the fact that this function never naturally returns to or from main and only terminates with a call to exit.
+The first thing I attempted was to grab the saved rbp address at `0x00007fffffff0268`, modify the last byte to point to the return addresss of `main()`, and then use the format string to modify the return address with the format string to the address of win(). However, this solution was both inefficient and impossible, due to the fact that this function never naturally returns to or from main and only terminates with a call to exit.
 
 The next idea I had was to overwrite an address in the Global Offset Table (GOT). To do this. I need to know the layout of the GOT. so I used ghidra to look at it.
 
