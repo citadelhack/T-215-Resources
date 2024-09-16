@@ -14,4 +14,6 @@ pwn checksec:
     NX:       NX enabled
     PIE:      PIE enabled
 ```
+From this we can see that we are working with an x86-64 binary with most common midigations in effect, depending on the primatives available in the binary this could make exploitation difficult. To find out what we are working with we will now preform static analysis.
 
+### Static Analysis
