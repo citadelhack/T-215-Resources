@@ -114,3 +114,33 @@ undefined8 main(void)
   return 0;
 }
 ```
+From this we can see that the program reads in a string from the user, does some operations on it, reads from a calculated file descriptor, compares the second read to a string, and prints the flag if the check passes. First let's find out what is done to our input string. The relevent code is as follows:
+```C
+  std::operator<<((basic_ostream *)std::cout,"Tell me what you know about *nix philosophies: ");
+  std::operator>>((basic_istream *)std::cin,buffer?);
+  fd = 0;
+  local_290 = 1;
+  while( true ) {
+    uVar6 = std::__cxx11::basic_string<>::size();
+    if (uVar6 <= (ulong)(long)local_290) break;
+    paVar4 = (allocator *)std::__cxx11::basic_string<>::operator[]((ulong)buffer?);
+    local_31 = *paVar4;
+    local_270 = &local_280;
+                    /* try { // try from 0010131d to 00101321 has its CatchHandler @ 00101599 */
+    std::__cxx11::basic_string<>::basic_string((initializer_list)local_248,&local_31);
+    std::__new_allocator<char>::~__new_allocator((__new_allocator<char> *)&local_280);
+    local_278 = local_248;
+    local_288 = std::__cxx11::basic_string<>::begin();
+    local_280 = std::__cxx11::basic_string<>::end();
+    while( true ) {
+      bVar1 = __gnu_cxx::operator!=((__normal_iterator *)&local_288,(__normal_iterator *)&local_280)
+      ;
+      if (!bVar1) break;
+      pcVar5 = (char *)__gnu_cxx::__normal_iterator<>::operator*((__normal_iterator<> *)&local_288);
+      fd = fd + *pcVar5;
+      __gnu_cxx::__normal_iterator<>::operator++((__normal_iterator<> *)&local_288);
+    }
+    std::__cxx11::basic_string<>::~basic_string(local_248);
+    local_290 = local_290 + 1;
+  }
+```
