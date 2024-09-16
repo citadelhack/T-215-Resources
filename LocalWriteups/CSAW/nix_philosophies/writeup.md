@@ -21,7 +21,7 @@ To find out what primatives we are working with we will now preform static analy
 
 ### Static Analysis
 To do this we can throw the binary into ghidra and see what the decompiler spits out. The only user defined function in this binary is `main()`, defined as follows:
-```C++
+```C
 undefined8 main(void)
 
 {
@@ -115,7 +115,7 @@ undefined8 main(void)
 }
 ```
 From this we can see that the program reads in a string from the user, does some operations on it, reads from a calculated file descriptor, compares the second read to a string, and prints the flag if the check passes. First let's find out what is done to our input string. The relevent code is as follows:
-```C++
+```C
   std::operator<<((basic_ostream *)std::cout,"Tell me what you know about *nix philosophies: ");
   std::operator>>((basic_istream *)std::cin,buffer?);
   fd = 0;
@@ -147,7 +147,7 @@ From this we can see that the program reads in a string from the user, does some
 This can be pretty difficult to understand since it was origionally written in C++ so you will see artifacts from the operator overloading and object oriented features of C++, but what this code basically does is loop through the input string from index 1 to the end, adding the value of each character to the `int fd` variable.
 
 The next relevent chunck of code (shortend for readability) is here:
-```C++
+```C
   read(fd + -0x643,buf,0x20);
   iVar3 = strcmp("make every program a filter\n",buf);
   if (iVar3 == 0) {
