@@ -364,3 +364,7 @@ int safety(char *param_1)
   return 1;
 }
 ```
+First we see that `main()` just sets buffer modes and calls `handle_client()`. In `handle_client()` we see that it takes in input, and then preforms some checks on your input, and depending on what checks your input passes or doesnt pass, the code will preform some action. 
+
+## The Vulnerabilities
+The first vulnerability you may see is a format string vuln in the call `sprintf(local_82,command);`. Because of the midigations in effect, this cannot be used to directly overwrite any function pointers, but it can be used to leak values (the random string in particular). However, I did not use this vulnerablilty in my solution. 
