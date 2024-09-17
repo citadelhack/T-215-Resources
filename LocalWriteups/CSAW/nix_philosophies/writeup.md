@@ -156,3 +156,22 @@ The next relevent chunck of code (shortend for readability) is here:
   }
 ```
 This reads from `fd - 0x643` and compares the result to `"make every program a filter\n`. If this check passes, the flag is printed. 
+
+## Exploitation
+since the `read()` function reads from a file descriptor, if we make the first argument `0`, we can read from `stdin` and write any string `0x20` byte string we want to `buf`. To do this we must set the `fd` variable to `0x643` so that the first argument becomes `0`. Since the `fd` variable is set by adding up the values of all characters except for the first on, we just must find a string that adds up to `0x643` not including the first character. The string I used was `'A' + 'B'*23 + 'U'`. When the program is passed this string, we can read another string from stdin. If we pass the string `"make every program a filter\n"` we get the flag.
+```python
+[+] Starting local process './chal' argv=[b'./chal'] : pid 622435
+[DEBUG] Received 0x2f bytes:
+    b'Tell me what you know about *nix philosophies: '
+[DEBUG] Sent 0x1a bytes:
+    b'ABBBBBBBBBBBBBBBBBBBBBBBU\n'
+[DEBUG] Sent 0x1c bytes:
+    b'make every program a filter\n'
+[DEBUG] Received 0x17 bytes:
+    b'\n'
+    b'Welcome to pwning ^_^\n'
+[DEBUG] Received 0xc bytes:
+    b'flag{LOCAL}\n'
+b'\nWelcome to pwning ^_^\nflag{LOCAL}\n'
+[*] Process './chal' stopped with exit code 0 (pid 622435)
+```
