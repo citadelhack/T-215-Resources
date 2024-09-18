@@ -364,7 +364,7 @@ int safety(char *param_1)
   return 1;
 }
 ```
-First we see that `main()` just sets buffer modes and calls `handle_client()`. In `handle_client()` we see that it takes in input, and then preforms some checks on your input, and depending on what checks your input passes or doesnt pass, the code will preform some action. 
+First we see that `main()` just sets buffer modes and calls `handle_client()`. In `handle_client()` we see that it takes in input, and then preforms some checks on your input, and depending on what checks your input passes or doesnt pass, the code will preform some action. We can also see that `randGen()` is called, which generates a random string of 10 bytes. If the input is a string contained in the `whitelist` array in `.data`, `popen()` is called and the command is executed, otherwise we are told that our command is not allowed. If the input is equal to the random string, `allowCopy()` is called. This function will allow us to add a new command. It intends for this new command to be the internal command queue. After we input our new command, the first 5 bytes are checked to make sure they are the string `"queue"`. After this a check buffer is set up and the `safety()` function is called. This function preforms some some checks on the `whitelist` array calls `kickOut()` which exits the program if the checks fail. 
 
 ## The Vulnerabilities
 The first vulnerability you may see is a format string vuln in the call `sprintf(local_82,command);`. Because of the midigations in effect, this cannot be used to directly overwrite any function pointers, but it can be used to leak values (the random string in particular). However, I did not use this vulnerablilty in my solution. 
