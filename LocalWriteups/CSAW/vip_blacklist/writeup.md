@@ -369,4 +369,6 @@ First we see that `main()` just sets buffer modes and calls `handle_client()`. I
 ## The Vulnerabilities
 The first vulnerability you may see is a format string vuln in the call `sprintf(local_82,command);`. Because of the midigations in effect, this cannot be used to directly overwrite any function pointers, but it can be used to leak values (the random string in particular). However, I did not use this vulnerablilty in my solution. In order to find the value of the random string, I used the same random function seeded with the current time, just like in the `genRand()`, in order to calculate the value client side.
 
-The vulnerabilities that I exploited exist in the `allowCopy()` and `safety()`. 
+The vulnerabilities that I exploited exist in the `allowCopy()` and `safety()`. The first vulnerability is that the `read()` call allows us to read 0x20 bytes when only 0x6 should be required, and only the first 5 bytes are checked to be equal to `queue`. Furthermore, when the new command is copied into the `whitelist`, the length of the read is used instead of the size of `queue`. This allows us to overwrite the entirety of the `whitelist` buffer. Furthermore, the read call will read until the `0xa` byte (newline), is recieved. This means we can read in null bytes. Because of this we can add our own command as long as the first 5 bytes are `queue`. However, there are still checks we must pass in the `safety()` function.
+
+
