@@ -369,6 +369,48 @@ First we see that `main()` just sets buffer modes and calls `handle_client()`. I
 ## The Vulnerabilities
 The first vulnerability you may see is a format string vuln in the call `sprintf(local_82,command);`. Because of the midigations in effect, this cannot be used to directly overwrite any function pointers, but it can be used to leak values (the random string in particular). However, I did not use this vulnerablilty in my solution. In order to find the value of the random string, I used the same random function seeded with the current time, just like in the `genRand()`, in order to calculate the value client side.
 
-The vulnerabilities that I exploited exist in the `allowCopy()` and `safety()`. The first vulnerability is that the `read()` call allows us to read 0x20 bytes when only 0x6 should be required, and only the first 5 bytes are checked to be equal to `queue`. Furthermore, when the new command is copied into the `whitelist`, the length of the read is used instead of the size of `queue`. This allows us to overwrite the entirety of the `whitelist` buffer. Furthermore, the read call will read until the `0xa` byte (newline), is recieved. This means we can read in null bytes. Because of this we can add our own command as long as the first 5 bytes are `queue`. However, there are still checks we must pass in the `safety()` function.
+The vulnerabilities that I exploited exist in the `allowCopy()` and `safety()`. The first vulnerability is that the `read()` call allows us to read 0x20 bytes when only 0x6 should be required, and only the first 5 bytes are checked to be equal to `queue`. Furthermore, when the new command is copied into the `whitelist`, the length of the read is used instead of the size of `queue`. This allows us to overwrite the entirety of the `whitelist` buffer. Furthermore, the read call will read until the `0xa` byte (newline), is recieved. This means we can read in null bytes. Because of this we can add our own command as long as the first 5 bytes are `queue`. However, there are still checks we must pass in the `safety()` function. The first thing to notice about the `safety()` function is the parameter it is passed, which is a `char*` to the an array defined in `allowCopy()`.
 
+```C
+  safety_var[6] = 'e';
+  safety_var[7] = 'x';
+  safety_var[8] = 'i';
+  safety_var[9] = 't';
+  safety_var[0] = 'c';
+  safety_var[1] = 'l';
+  safety_var[2] = 'e';
+  safety_var[3] = 'a';
+  safety_var[4] = 'r';
+  safety_var[5] = '\0';
+  safety_var[10] = '\0';
+  safety_var[0xb] = '\0';
+  safety_var[0xc] = 'l';
+  safety_var[0xd] = 's';
+  safety_var[0xe] = '\0';
+  safety_var[0xf] = '\0';
+```
+This can be simplified to `"clear\0exit\0\0ls\0\0"`. Then in `safety()`, the following checks are run:
+
+```C
+iVar1 = strcmp(whitelist,"queue");
+  one = (ulong)(iVar1 == 0);
+  for (four = one; four < 4; four = four + 1) {
+    sVar2 = strlen(whitelist + four * 6);
+    if (5 < sVar2) {
+      kickOut();
+    }
+    local_18 = 0;
+    while( true ) {
+      sVar2 = strlen(param_1 + (four - one) * 6);
+      if (sVar2 <= local_18) break;
+      if (param_1[local_18 + (four - one) * 6] != whitelist[local_18 + four * 6]) {
+        kickOut();
+      }
+      local_18 = local_18 + 1;
+    }
+  }
+```
+This chunk of code first checks whether the first stirng in `whitelist` is `queue`, if it is, the following loop starts at the second string in `whitelist` and if not it starts at the first. Then it loops through each command in the `whitelist` and checks that the string in `whitelist` has a length of less than or equal to 5 and then checks strings stored there against the corresponding string in the `safety_var`. If these checks fails at any point, `kickOut()` is called. However, the check uses the string length of the correct string in when comparing the strings. This means that I can append a command to a correct command as long as the total string length is less than or equal to 5. The best canditate for this is `ls`, since it is the smallest. However, after modifying it to `ls;` to append another command, we only have 2 characters to work with. This seems difficult to overcome until we remember that the normal program that we run to get a shell is `/bin/sh`. This is 7 characters but the name of the file without the path is just `sh`, 2 letters. And we know from either reading documentation or deduction from the fact that `ls`, `clear`, and `exit` run fine, that `popen()` uses the `$PATH` environment variable to find binaries. Since `/bin` is in `$PATH` by default on linux, we can simple make the `ls` command in the `whitelist` into `ls;sh` to pass the checks and gain a shell.
+
+My solution code and the origional binary are in this directory if you want to try for yourself.
 
