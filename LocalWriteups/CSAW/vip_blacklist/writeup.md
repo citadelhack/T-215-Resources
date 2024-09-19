@@ -2,11 +2,11 @@
 ## Recon
 In this challenge we are given a single unstripped binary. The results of `file` and `pwn checksec` are below:
 
-File:
+**file:**
 ```
 vip_blacklist: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=50af2ef2ebbfe81e7281c668dc29a964a4f872a8, for GNU/Linux 3.2.0, not stripped
 ```
-pwn checksec:
+**pwn checksec:**
 ```javascript
     Arch:       amd64-64-little
     RELRO:      Full RELRO
