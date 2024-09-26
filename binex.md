@@ -56,6 +56,9 @@ This Github repository is a step by step course that walks you through the basic
 ### [RPISEC-MBE](https://github.com/RPISEC/MBE)
 This is a github repo containing the course material of RPI's Modern Binary Exploitation Course from when it was student-led.
 
+### [Shogun](https://github.com/guyinatuxedo/Shogun)
+This Github repository contains a collection of glibc heap challenge writeups
+
 ## Youtube Channels
 ### [LiveOverflow](https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN)
 LiveOverflow is a great Youtuber for learning about hacking and exploitation, but he also has an outstanding playlist walking you through binary exploitation and memory corruption attacks.
