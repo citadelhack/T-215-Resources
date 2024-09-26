@@ -21,6 +21,9 @@ A website that organizes a multitude of hacking information, including binary ex
 ### [Phrack Magazine](https://phrack.org/)
 An online magazine where many hackers first reveal or expound on techniques they have discovered.
 
+### [tmp.out](https://tmpout.sh/)
+An online magazine similar to the Phrack Magazine where hackers share their techniques.
+
 ## Challenges
 ### [Pwnable.kr](https://pwnable.kr)
 Pwnable.kr is a website hosting binex challenges sorted by difficulty. Not a great place to start but a great place to practice and find weak points and attacks you don't know. Write-ups for each challenge can be found online, don't be afraid to learn from a write-up if you get stuck.
