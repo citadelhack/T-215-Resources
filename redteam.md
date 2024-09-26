@@ -11,6 +11,9 @@ A website cataloging different OSINT tools.
 ### [ired.team](https://www.ired.team/)
 A website containing notes on red teaming and pen-testing Windows machines.
 
+### [HackTricks](https://book.hacktricks.xyz/)
+A website that organizes a multitude of hacking information, including many redteam techniques, including network service exploitaion, web exploitation, reverse shells, common privalige excalation and much more.
+
 ## Challenges
 ### [hxp CTFs](https://ctf.link/)
 A website archiving past hxp jeopardy style CTFs. They can be run as a VM for practice. 
