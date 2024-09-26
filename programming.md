@@ -11,6 +11,11 @@ Geeks for Geeks is a learning platform similar to W3Schools with guides on many 
 ### [Reading Cdecls](http://www.unixwiz.net/techtips/reading-cdecl.html)
 This is a great article explaining how to read complicated declarations in C.
 
+### [Bootlin Elixir Cross-Referencer](https://elixir.bootlin.com)
+This is a versioned sourcecode repository/search engine for many linux things (glibc, musl-libc, u-boot, linux kernel, zen kernel, and more).
+
+### [grep.app](https://grep.app/)
+Grep.app is a source code search engine covering about 500,000 git repositories. It is a great tool when learning a new language or library.
 
 ## Challenges
 ### [LeetCode](https://leetcode.com/)
@@ -19,6 +24,3 @@ LeetCode is the industry standard for practicing for coding interviews. Even eas
 ### [Exercism](https://exercism.org/)
 Exercism is another platform similar to LeetCode but with challenges tailored to specific languages and a shallower learning curve.
 
-## Tools
-### [grep.app](https://grep.app/)
-Grep.app is a source code search engine covering about 500,000 git repositories. It is a great tool when learning a new language or library.
