@@ -8,6 +8,9 @@ A website hosting open source security courses, most pertain to software securit
 ### [SOC Analyst Study Guide](https://biggingerhoneypot.notion.site/68fb84422c8b47118569f7585054a7d7?v=493a04e2c4024a899ba23dea337d7009)
 A study guide for those wanting to be a Security Operations Center Analyst.
 
+### [HackTricks](https://book.hacktricks.xyz/)
+A website that organizes a multitude of hacking information, including hardening techniques for Windows, Mac, and Linux.
+
 ## Challenges
 ### [TryHackMe](https://www.hackthebox.com/)
 A popular educational platform containing bite-sized lessons on offensive and defensive security.
