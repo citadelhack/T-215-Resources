@@ -15,6 +15,9 @@ This mdBook contains the notes of a former army cyber operator containing binex 
 ### [Ret to Rop](https://ret2rop.blogspot.com/)
 A blog containing articles on exploitation techniques. Most pertain to bypassing ASLR and ret2libc attacks.
 
+### [HackTricks](https://book.hacktricks.xyz/)
+A website that organizes a multitude of hacking information, including binary exploitation.
+
 ## Challenges
 ### [Pwnable.kr](https://pwnable.kr)
 Pwnable.kr is a website hosting binex challenges sorted by difficulty. Not a great place to start but a great place to practice and find weak points and attacks you don't know. Write-ups for each challenge can be found online, don't be afraid to learn from a write-up if you get stuck.
