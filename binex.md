@@ -18,7 +18,7 @@ A blog containing articles on exploitation techniques. Most pertain to bypassing
 ### [HackTricks](https://book.hacktricks.xyz/)
 A website that organizes a multitude of hacking information, including binary exploitation.
 
-### [Phrack Magazine] (https://phrack.org/)
+### [Phrack Magazine](https://phrack.org/)
 An online magazine where many hackers first reveal or expound on techniques they have discovered.
 
 ## Challenges
