@@ -20,6 +20,10 @@ Grep.app is a source code search engine covering about 500,000 git repositories.
 ### [Compiler Explorer](https://godbolt.org/)
 A website that allows you to see how different compilers will compile your code (the .text section at least)
 
+### [Paged Out](https://pagedout.institute/?page=issues.php)
+An online technical magazine that contains article on many topics, including programming.
+
+
 ## Challenges
 ### [LeetCode](https://leetcode.com/)
 LeetCode is the industry standard for practicing for coding interviews. Even easy problems can be difficult for the beginner, so don't get disheartened and remember that other people's solutions are a great resource after you have given a challenge your best shot.
