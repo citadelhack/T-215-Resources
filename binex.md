@@ -33,6 +33,9 @@ A blog containing posts with CTF writups and research writeups.
 ### [Paged Out](https://pagedout.institute/?page=issues.php)
 An online technical magazine that contains article on many topics, including binary exploitation.
 
+### [PoC||GTFO](https://www.alchemistowl.org/pocorgtfo/)
+A online journal documenting binary exploitation and reversing techniques and exploits.
+
 ## Challenges
 ### [Pwnable.kr](https://pwnable.kr)
 Pwnable.kr is a website hosting binex challenges sorted by difficulty. Not a great place to start but a great place to practice and find weak points and attacks you don't know. Write-ups for each challenge can be found online, don't be afraid to learn from a write-up if you get stuck.
