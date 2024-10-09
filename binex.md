@@ -27,6 +27,9 @@ An online magazine similar to the Phrack Magazine where hackers share their tech
 ### [Low-level adventures](https://0x434b.dev/)
 A blog containing posts about low level systems and binary exploitation
 
+### [David Buchanan's Blog](https://www.da.vidbuchanan.co.uk/blog/)
+A blog containing posts with CTF writups and research writeups.
+
 ## Challenges
 ### [Pwnable.kr](https://pwnable.kr)
 Pwnable.kr is a website hosting binex challenges sorted by difficulty. Not a great place to start but a great place to practice and find weak points and attacks you don't know. Write-ups for each challenge can be found online, don't be afraid to learn from a write-up if you get stuck.
