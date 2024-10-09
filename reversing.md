@@ -12,6 +12,9 @@ This book teaches you how to set up a safe environment to analyze malware sample
 ### [Paged Out](https://pagedout.institute/?page=issues.php)
 An online technical magazine that contains article on many topics, including reversing.
 
+### [PoC||GTFO](https://www.alchemistowl.org/pocorgtfo/)
+A online journal documenting binary exploitation and reversing techniques and exploits.
+
 ## Challenges 
 ### [PicoGym-Reverse Engineering](https://play.picoctf.org/login?redirect=/practice)
 PicoCTF's PicoGym contains past challenges from PicoCTF broken down by category. The reverse engineering section contains many good reverse engineering challenges of various difficulties.
