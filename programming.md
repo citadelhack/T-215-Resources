@@ -23,6 +23,9 @@ A website that allows you to see how different compilers will compile your code 
 ### [Paged Out](https://pagedout.institute/?page=issues.php)
 An online technical magazine that contains article on many topics, including programming.
 
+### [LowLevel University](https://github.com/gurugio/lowlevelprogramming-university?tab=readme-ov-file#future-of-low-level-programming)
+This is a github repository containing resources for learning low level programming with a general focus on linux. It also provides a gerneral roadmap for those who don't know how to start.
+
 
 ## Challenges
 ### [LeetCode](https://leetcode.com/)
